@@ -5,10 +5,10 @@ import {
   TouchableOpacity,
   Text,
   StyleSheet,
+  Image
 } from 'react-native';
 import {StackActions} from '@react-navigation/native';
 import Color from '../Utils/Color';
-// import { moderateScale, isTabDevice, isiPhoneX } from '../reusableComponents/DeviceInfo';
 
 export default class ProfileScreen extends Component {
   constructor(props) {
@@ -26,13 +26,18 @@ export default class ProfileScreen extends Component {
 
   render() {
     return (
-      <View style={{flex:6}}>
-        <View style={{flex:5}}>
+      <View style={{flex:10}}>
+        <View style={{flex:9}}>
           <Text>ProfileScreen</Text>
         </View>
         <View style={{flex:1, flexDirection:'row'}}>
-          <TouchableOpacity style={{flex:1}} onPress={()=>this.onClickListener('profilescreen')}><Text>Profile</Text></TouchableOpacity>
-          <TouchableOpacity style={{flex:1}} onPress={()=>this.onClickListener('homescreen')}><Text>Home</Text></TouchableOpacity>
+          <TouchableOpacity style={{flex:1,flexDirection:'row',alignItems:'center',backgroundColor:Color.Gray}} onPress={()=>this.onClickListener('homescreen')}>
+          <Image style={{height:50,width:50}}source={require('../Assets/conference.png')} />
+            <Text>Home</Text></TouchableOpacity>
+          <TouchableOpacity style={{flex:1,flexDirection:'row',alignItems:'center',backgroundColor:Color.Gray}} onPress={()=>this.onClickListener('profilescreen')}>
+            <Image style={{height:50,width:50}}source={require('../Assets/profile.png')} />
+            <Text>Profile</Text></TouchableOpacity>
+          
         </View>
       </View>
     );

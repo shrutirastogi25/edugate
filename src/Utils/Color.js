@@ -12,11 +12,7 @@ const Color = {
     Dark_Green: '#03c03c',
     Container_Background: '#F5F5F5',
     Input_Border: '#F5FCFF',
-    Mahindra_Logo_C1: '#1EB7E1',
-    Mahindra_Logo_C2: '#F6983C',
-    Mahindra_Logo_C3: '#B0D04B',
-    Mahindra_Logo_C4: '#FED15B',
-    buttonColor: '#181616',
+    buttonColor: '#F57F17',
     Light_Gray: '#F0F0F0',
     Silver: '#B0B0B0',
   };

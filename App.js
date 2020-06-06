@@ -35,13 +35,7 @@ function App() {
           name="HomeScreen"
           component={HomeScreen}
           options={{
-            title: 'Home',
-            headerTitleAlign: 'center',
-            headerShown: true,
-            headerStyle: {
-              backgroundColor: Color.Header,
-            },
-            headerTintColor: Color.White,
+            headerShown: false,
           }}
         />
         <Stack.Screen
