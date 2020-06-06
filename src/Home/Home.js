@@ -3,35 +3,36 @@ import React, {Component} from 'react';
 import {View, TouchableOpacity, Text} from 'react-native';
 import {StackActions} from '@react-navigation/native';
 import Color from '../Utils/Color';
+import { TouchableHighlight } from 'react-native-gesture-handler';
 
 export default class RegistrationScreen extends Component {
   constructor(props) {
     super(props);
   }
   componentDidMount() {}
-  onClickListener = obj1 => {
-    if (obj1 === 'login') {
+  onClickListener = viewId => {
+    if(viewId=='profilescreen'){
+    this.props.navigation.dispatch(StackActions.replace('ProfileScreen'));
+    }
+    else if(viewId=='homescreen'){
+      this.props.navigation.dispatch(StackActions.replace('HomeScreen'));
+    }
+    else if(viewId=='loginscreen'){
       this.props.navigation.dispatch(StackActions.replace('LoginScreen'));
-    } else {
-      this.props.navigation.dispatch(StackActions.replace('ProfileScreen'));
     }
   };
 
   render() {
     return (
-      <View
-        style={{
-          flex: 1,
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: Color.White,
-        }}>
-        <TouchableOpacity onPress={() => this.onClickListener('login')}>
-          <Text>Home Screen(to login screen)</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.onClickListener('profile')}>
-          <Text style={{marginTop: '10%'}}>Home Screen(to profile screen)</Text>
-        </TouchableOpacity>
+      <View style={{flex:6}}>
+        <View style={{flex:5}}>
+          <Text>ProfileScreen</Text>
+          <TouchableHighlight></TouchableHighlight>
+        </View>
+        <View style={{flex:1, flexDirection:'row'}}>
+          <TouchableOpacity style={{flex:1}} onPress={()=>this.onClickListener('profilescreen')}><Text>Profile</Text></TouchableOpacity>
+          <TouchableOpacity style={{flex:1}} onPress={()=>this.onClickListener('homescreen')}><Text>Home</Text></TouchableOpacity>
+        </View>
       </View>
     );
   }

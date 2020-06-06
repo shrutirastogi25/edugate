@@ -4,7 +4,6 @@ import {
   View,
   TouchableOpacity,
   Text,
-  TouchableHighlight,
   StyleSheet,
 } from 'react-native';
 import {StackActions} from '@react-navigation/native';
@@ -16,86 +15,24 @@ export default class ProfileScreen extends Component {
     super(props);
   }
   componentDidMount() {}
-  onClickListener = () => {
-    this.props.navigation.dispatch(StackActions.replace('LoginScreen'));
+  onClickListener = viewId => {
+    if(viewId=='profilescreen'){
+    this.props.navigation.dispatch(StackActions.replace('ProfileScreen'));
+    }
+    else if(viewId=='homescreen'){
+      this.props.navigation.dispatch(StackActions.replace('HomeScreen'));
+    }
   };
 
-  click = obj1 => {
-    console.log('color = ' + obj1);
-  };
-  // width: '100%', position: 'absolute', bottom: 0, alignItems: 'center', justifyContent: 'center', height: 50, flexDirection: 'row'
   render() {
     return (
-      <View style={{flex: 1}}>
-        <TouchableOpacity
-          onPress={() => this.click('Red')}
-          style={{flex: 2, backgroundColor: Color.Red}}
-        />
-        <TouchableOpacity
-          onPress={() => this.click('Green')}
-          style={{
-            flex: 3,
-            backgroundColor: Color.Green,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-          <View style={{elevation: 50}}>
-            <TouchableHighlight
-              style={[styles.buttonContainer, styles.loginButton]}
-              onPress={() => this.onClickListener()}>
-              <Text>Dhruv</Text>
-            </TouchableHighlight>
-          </View>
-        </TouchableOpacity>
-        <View style={{flex: 4, flexDirection: 'row'}}>
-          <View style={{flex: 1}}>
-            <TouchableOpacity
-              onPress={() => this.click('Silver')}
-              style={{flex: 1, backgroundColor: Color.Silver}}
-            />
-            <TouchableOpacity
-              onPress={() => this.click('Black')}
-              style={{flex: 1, backgroundColor: Color.Black}}
-            />
-          </View>
-          <View style={{flex: 1, flexDirection: 'row'}}>
-            <View style={{flex: 1}}>
-              <TouchableOpacity
-                onPress={() => this.click('Red')}
-                style={{flex: 1, backgroundColor: Color.Red}}
-              />
-              <TouchableOpacity
-                onPress={() => this.click('Grey')}
-                style={{flex: 1, backgroundColor: Color.Gray}}
-              />
-              <TouchableOpacity
-                onPress={() => this.click('Green')}
-                style={{flex: 1, backgroundColor: Color.Green}}
-              />
-              <TouchableOpacity
-                onPress={() => this.click('Red')}
-                style={{flex: 1, backgroundColor: Color.Red}}
-              />
-            </View>
-            <View style={{flex: 1, flexDirection: 'row'}}>
-              <TouchableOpacity
-                onPress={() => this.click('Black')}
-                style={{flex: 1, backgroundColor: Color.Black}}
-              />
-              <TouchableOpacity
-                onPress={() => this.click('Grey')}
-                style={{flex: 1, backgroundColor: Color.Gray}}
-              />
-              <TouchableOpacity
-                onPress={() => this.click('Green')}
-                style={{flex: 1, backgroundColor: Color.Green}}
-              />
-              <TouchableOpacity
-                onPress={() => this.click('Dark Green')}
-                style={{flex: 1, backgroundColor: Color.Dark_Green}}
-              />
-            </View>
-          </View>
+      <View style={{flex:6}}>
+        <View style={{flex:5}}>
+          <Text>ProfileScreen</Text>
+        </View>
+        <View style={{flex:1, flexDirection:'row'}}>
+          <TouchableOpacity style={{flex:1}} onPress={()=>this.onClickListener('profilescreen')}><Text>Profile</Text></TouchableOpacity>
+          <TouchableOpacity style={{flex:1}} onPress={()=>this.onClickListener('homescreen')}><Text>Home</Text></TouchableOpacity>
         </View>
       </View>
     );
