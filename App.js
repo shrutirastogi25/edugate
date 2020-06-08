@@ -9,7 +9,6 @@ import HomeScreen from './src/Home/Home';
 import RegistrationScreen from './src/Login/Registration';
 import ResetPassword from './src/Login/ResetPassword';
 import ProfileScreen from './src/Profile/ProfileScreen';
-import Color from './src/Utils/Color';
 
 const Stack = createStackNavigator();
 
