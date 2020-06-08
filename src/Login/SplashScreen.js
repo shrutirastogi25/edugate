@@ -33,26 +33,6 @@ export default class SplashScreen extends Component {
     this.props.navigation.dispatch(StackActions.replace('LoginScreen'));
   };
 
-  /*  render() {
-    return (
-      <View
-        style={{
-          flex: 1,
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: Color.White,
-        }}>
-        <StatusBar
-          backgroundColor={Color.App_Background}
-          barStyle="dark-content"
-        />
-        <Text>hello</Text>
-      </View>
-    );
-  }
-}
- */
-
   render() {
     return (
       <SafeAreaView style={{flex: 1, backgroundColor: '#616161'}}>
