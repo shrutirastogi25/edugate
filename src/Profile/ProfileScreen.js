@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
-import {View, TouchableOpacity, Text, Image} from 'react-native';
+import {View, TouchableOpacity, Text, Image, StyleSheet} from 'react-native';
 import {StackActions} from '@react-navigation/native';
 import Color from '../Utils/Color';
 
@@ -58,49 +58,49 @@ export default class ProfileScreen extends Component {
   }
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: '#DCDCDC',
-//   },
-//   inputContainer: {
-//     borderBottomColor: '#F5FCFF',
-//     backgroundColor: '#FFFFFF',
-//     borderRadius: 30,
-//     borderBottomWidth: 1,
-//     width: 250,
-//     height: 45,
-//     marginBottom: 20,
-//     flexDirection: 'row',
-//     alignItems: 'center',
-//   },
-//   inputs: {
-//     height: 45,
-//     marginLeft: 16,
-//     borderBottomColor: '#FFFFFF',
-//     flex: 1,
-//   },
-//   inputIcon: {
-//     width: 30,
-//     height: 30,
-//     marginLeft: 15,
-//     justifyContent: 'center',
-//   },
-//   buttonContainer: {
-//     height: 45,
-//     flexDirection: 'row',
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     marginBottom: 20,
-//     width: 250,
-//     borderRadius: 30,
-//   },
-//   loginButton: {
-//     backgroundColor: '#00b5ec',
-//   },
-//   loginText: {
-//     color: 'white',
-//   },
-// });
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#DCDCDC',
+  },
+  inputContainer: {
+    borderBottomColor: '#F5FCFF',
+    backgroundColor: '#FFFFFF',
+    borderRadius: 30,
+    borderBottomWidth: 1,
+    width: 250,
+    height: 45,
+    marginBottom: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  inputs: {
+    height: 45,
+    marginLeft: 16,
+    borderBottomColor: '#FFFFFF',
+    flex: 1,
+  },
+  inputIcon: {
+    width: 30,
+    height: 30,
+    marginLeft: 15,
+    justifyContent: 'center',
+  },
+  buttonContainer: {
+    height: 45,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 20,
+    width: 250,
+    borderRadius: 30,
+  },
+  Button: {
+    backgroundColor: '#00b5ec',
+  },
+  Text: {
+    color: 'white',
+  },
+});

@@ -36,12 +36,12 @@ export default class RegistrationScreen extends Component {
           <TouchableHighlight
             style={[styles.buttonContainer, styles.Button]}
             onPress={() => this.onClickListener('start')}>
-            <Text style={styles.loginText}>Start a meeting</Text>
+            <Text style={styles.Text}>Start a meeting</Text>
           </TouchableHighlight>
           <TouchableHighlight
             style={[styles.buttonContainer, styles.Button]}
             onPress={() => this.onClickListener('join')}>
-            <Text style={styles.loginText}>Join a meeting</Text>
+            <Text style={styles.Text}>Join a meeting</Text>
           </TouchableHighlight>
         </View>
         <View style={{flex: 1, flexDirection: 'row'}}>
@@ -57,7 +57,7 @@ export default class RegistrationScreen extends Component {
               style={{height: 50, width: 50}}
               source={require('../Assets/conference.png')}
             />
-            <Text>Home</Text>
+            <Text style={styles.Text}>Home</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={{
@@ -71,7 +71,7 @@ export default class RegistrationScreen extends Component {
               style={{height: 50, width: 50}}
               source={require('../Assets/profile.png')}
             />
-            <Text>Profile</Text>
+            <Text style={styles.Text}>Profile</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
   Button: {
     backgroundColor: '#F57F17',
   },
-  loginText: {
+  Text: {
     color: 'white',
   },
 });
