@@ -1,6 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
-import {View, TouchableOpacity, Text, Image, StyleSheet} from 'react-native';
+import {
+  View,
+  TouchableOpacity,
+  Text,
+  Image,
+  StyleSheet,
+  TouchableHighlight,
+} from 'react-native';
 import {StackActions} from '@react-navigation/native';
 import Color from '../Utils/Color';
 
@@ -14,14 +21,34 @@ export default class ProfileScreen extends Component {
       this.props.navigation.dispatch(StackActions.replace('ProfileScreen'));
     } else if (viewId === 'homescreen') {
       this.props.navigation.dispatch(StackActions.replace('HomeScreen'));
+    } else if (viewId === 'login') {
+      this.props.navigation.dispatch(StackActions.replace('LoginScreen'));
+    } else if (viewId === 'reset') {
+      this.props.navigation.dispatch(StackActions.replace('ResetPassword'));
     }
   };
 
   render() {
     return (
       <View style={{flex: 10}}>
-        <View style={{flex: 9}}>
-          <Text>ProfileScreen</Text>
+        <View style={{flex: 6, padding: 10, flexDirection: 'row'}}>
+          <Image
+            source={require('../Assets/profile.png')}
+            style={{height: 200, width: 200}}
+          />
+          <Text style={{fontWeight: 'bold', fontSize: 20}}>Shruti Rastogi</Text>
+        </View>
+        <View style={{flex: 3, alignItems: 'center'}}>
+          <TouchableHighlight
+            style={styles.buttonContainer}
+            onPress={() => this.onClickListener('reset')}>
+            <Text>Change Password</Text>
+          </TouchableHighlight>
+          <TouchableHighlight
+            style={[styles.buttonContainer, styles.Button]}
+            onPress={() => this.onClickListener('login')}>
+            <Text style={styles.Text}>Logout</Text>
+          </TouchableHighlight>
         </View>
         <View style={{flex: 1, flexDirection: 'row'}}>
           <TouchableOpacity
@@ -36,7 +63,7 @@ export default class ProfileScreen extends Component {
               style={{height: 50, width: 50}}
               source={require('../Assets/conference.png')}
             />
-            <Text>Home</Text>
+            <Text style={styles.Text}>Home</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={{
@@ -50,7 +77,7 @@ export default class ProfileScreen extends Component {
               style={{height: 50, width: 50}}
               source={require('../Assets/profile.png')}
             />
-            <Text>Profile</Text>
+            <Text style={styles.Text}>Profile</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -98,7 +125,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   Button: {
-    backgroundColor: '#00b5ec',
+    backgroundColor: Color.Orange,
   },
   Text: {
     color: 'white',
