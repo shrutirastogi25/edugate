@@ -7,6 +7,7 @@ import {
   Image,
   StyleSheet,
   TouchableHighlight,
+  Alert,
 } from 'react-native';
 import {StackActions} from '@react-navigation/native';
 import Color from '../Utils/Color';
@@ -46,7 +47,24 @@ export default class ProfileScreen extends Component {
           </TouchableHighlight>
           <TouchableHighlight
             style={[styles.buttonContainer, styles.Button]}
-            onPress={() => this.onClickListener('login')}>
+            onPress={() =>
+              Alert.alert(
+                'Logout',
+                'Do you really want to logout?',
+                [
+                  {
+                    text: 'Yes',
+                    onPress: () => this.onClickListener('login'),
+                  },
+                  {
+                    text: 'No',
+                    onPress: () => this.onClickListener('profilescreen'),
+                    style: 'cancel',
+                  },
+                ],
+                {cancelable: false},
+              )
+            }>
             <Text style={styles.Text}>Logout</Text>
           </TouchableHighlight>
         </View>
